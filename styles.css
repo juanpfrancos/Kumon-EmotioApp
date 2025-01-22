@@ -1,0 +1,33 @@
+/* styles.css */
+#votacion-container {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.emoji-btn {
+  width: 100px; /* Tamaño del botón */
+  height: 100px; /* Tamaño del botón */
+  border-radius: 50%; /* Forma circular */
+  background-size: cover; /* La imagen ocupa todo el botón */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid #ddd; /* Borde opcional */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.emoji-btn:hover {
+  transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.emoji-btn:active {
+  transform: scale(1); /* Restablece el tamaño al hacer clic */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Sombra menos pronunciada */
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Votaciones</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="grey lighten-4">
+  <main class="container">
+    <h1 class="center-align">Sistema de Votaciones</h1>
+
+    <!-- Contenedor de votación -->
+    <div id="votacion-container" class="row">
+      <!-- Candidato -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/01.jpg" alt="Candidato 1">
+          </div>
+          <div class="card-content">
+            <h5>Stefany Ospina Gallego</h5>
+            <div class="emojis center-align">
+
+              <button
+                class="btn emoji-btn emoji"
+                style="background-image: url('img/smile.webp');"
+                data-emoji="😊"
+              ></button>
+              <button
+                class="btn emoji-btn emoji"
+                style="background-image: url('img/sad.webp');"
+                data-emoji="🙁"
+              ></button>
+              <button
+                class="btn emoji-btn emoji"
+                style="background-image: url('img/ungry.webp');"
+                data-emoji="😡"
+              ></button>
+              <button
+              class="btn emoji-btn emoji"
+              style="background-image: url('img/neutral.webp');"
+              data-emoji="😐"
+            ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidato -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/02.jpg" alt="Candidato 2">
+          </div>
+          <div class="card-content">
+            <h5>Erika Johana Torres Fierro</h5>
+            <div class="emojis center-align">
+              <a class="btn-floating btn-large waves-effect waves-light red emoji" data-emoji="😊">😊</a>
+              <a class="btn-floating btn-large waves-effect waves-light green emoji" data-emoji="🙁">🙁</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😡">😡</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😐">😐</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidato -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/03.jpg" alt="Candidato 2">
+          </div>
+          <div class="card-content">
+            <h5>Stephanie Andrea Garcia Santa</h5>
+            <div class="emojis center-align">
+              <a class="btn-floating btn-large waves-effect waves-light red emoji" data-emoji="😊">😊</a>
+              <a class="btn-floating btn-large waves-effect waves-light green emoji" data-emoji="🙁">🙁</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😡">😡</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😐">😐</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidato -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/04.jpg" alt="Candidato 2">
+          </div>
+          <div class="card-content">
+            <h5>Junny Alejandra Vásquez Zárate</h5>
+            <div class="emojis center-align">
+              <a class="btn-floating btn-large waves-effect waves-light red emoji" data-emoji="😊">😊</a>
+              <a class="btn-floating btn-large waves-effect waves-light green emoji" data-emoji="🙁">🙁</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😡">😡</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😐">😐</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidato -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/05.jpg" alt="Candidato 2">
+          </div>
+          <div class="card-content">
+            <h5>Mariana Serna Ramírez</h5>
+            <div class="emojis center-align">
+              <a class="btn-floating btn-large waves-effect waves-light red emoji" data-emoji="😊">😊</a>
+              <a class="btn-floating btn-large waves-effect waves-light green emoji" data-emoji="🙁">🙁</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😡">😡</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😐">😐</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Candidato -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/06.jpg" alt="Candidato 2">
+          </div>
+          <div class="card-content">
+            <h5>Juan Guillermo García Salazar</h5>
+            <div class="emojis center-align">
+              <a class="btn-floating btn-large waves-effect waves-light red emoji" data-emoji="😊">😊</a>
+              <a class="btn-floating btn-large waves-effect waves-light green emoji" data-emoji="🙁">🙁</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😡">😡</a>
+              <a class="btn-floating btn-large waves-effect waves-light blue emoji" data-emoji="😐">😐</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resultados -->
+    <div id="resultados" class="section">
+      <h4>Resultados</h4>
+      <ul id="lista-resultados" class="collection"></ul>
+      <a id="reiniciar-btn" class="btn red">Reiniciar Votaciones</a>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
