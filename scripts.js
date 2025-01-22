@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function inicializarVotos() {
       votos = {};
       document.querySelectorAll(".card").forEach((candidato) => {
-        const nombreCandidato = candidato.querySelector("h5").textContent;
+        const nombreCandidato = candidato.querySelector("h4").textContent;
         votos[nombreCandidato] = {};
         candidato.querySelectorAll(".emoji").forEach((emoji) => {
           const emojiValue = emoji.dataset.emoji;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function configurarEventos() {
       document.querySelectorAll(".emoji").forEach((emoji) => {
         emoji.addEventListener("click", () => {
-          const candidato = emoji.closest(".card").querySelector("h5").textContent;
+          const candidato = emoji.closest(".card").querySelector("h4").textContent;
           const emojiValue = emoji.dataset.emoji;
   
           // Incrementar el voto
