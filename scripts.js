@@ -45,9 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /** Limpiar votos del estado y del almacenamiento */
     function reiniciarVotos() {
-        localStorage.removeItem(STORAGE_KEY); // Limpia el localStorage
-        votos = inicializarVotos(true); // Inicializa los votos y guarda
-        actualizarResultados(); // Refresca el DOM
+        try {
+            // Limpiar localStorage completamente
+            localStorage.removeItem(STORAGE_KEY);
+
+            // Reiniciar votos en memoria
+            votos = inicializarVotos(false);
+
+            // Actualizar el DOM
+            actualizarResultados();
+
+            console.log("Votaciones reiniciadas y LocalStorage limpiado.");
+        } catch (error) {
+            console.error("Error al reiniciar las votaciones:", error);
+        }
     }
 
     /** Actualizar la lista de resultados en pantalla */
@@ -75,27 +86,20 @@ document.addEventListener("DOMContentLoaded", () => {
         tarjetasCandidatos.forEach((candidato) => {
             const nombreCandidato = candidato.querySelector("h1").textContent;
 
-            // Asegurar que el candidato existe en el objeto votos
+            // Inicializar candidato si no existe
             if (!votos[nombreCandidato]) {
                 votos[nombreCandidato] = {};
                 candidato.querySelectorAll(".emoji").forEach((emoji) => {
                     const emojiValue = emoji.dataset.emoji;
                     votos[nombreCandidato][emojiValue] = 0;
                 });
-                guardarVotos(); // Guardar estado actualizado
+                guardarVotos();
             }
 
+            // Configurar evento para incrementar votos
             candidato.querySelectorAll(".emoji").forEach((emoji) => {
                 emoji.addEventListener("click", () => {
                     const emojiValue = emoji.dataset.emoji;
-                    // Incrementar el voto
-                    if (!votos[nombreCandidato]) {
-                        console.error(`El candidato ${nombreCandidato} no está definido en votos.`);
-                        return;
-                    }
-                    if (!votos[nombreCandidato][emojiValue]) {
-                        votos[nombreCandidato][emojiValue] = 0;
-                    }
                     votos[nombreCandidato][emojiValue]++;
                     guardarVotos();
                     actualizarResultados();
