@@ -1,24 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Clave para almacenar los datos en LocalStorage
     const STORAGE_KEY = "sistemaVotaciones";
 
-    // Elementos clave del DOM
     const listaResultados = document.getElementById("resultados");
     const botonReiniciar = document.getElementById("reiniciar-btn");
     const botonResultados = document.getElementById("resultados-btn");
     const tarjetasCandidatos = document.querySelectorAll(".card");
 
-    // Objeto para almacenar los votos
     let votos = {};
 
     /** Cargar votos desde LocalStorage */
     function cargarVotos() {
         try {
             const datosGuardados = localStorage.getItem(STORAGE_KEY);
-            votos = datosGuardados ? JSON.parse(datosGuardados) : inicializarVotos();
+            votos = datosGuardados ? JSON.parse(datosGuardados) : inicializarVotos(false);
         } catch (error) {
             console.error("Error al cargar los datos desde LocalStorage:", error);
-            votos = inicializarVotos();
+            votos = inicializarVotos(false);
         }
     }
 
@@ -32,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /** Inicializar votos con todos los candidatos y emojis */
-    function inicializarVotos() {
+    function inicializarVotos(guardar = true) {
         const votosIniciales = {};
         tarjetasCandidatos.forEach((candidato) => {
             const nombreCandidato = candidato.querySelector("h1").textContent;
@@ -42,37 +39,63 @@ document.addEventListener("DOMContentLoaded", () => {
                 votosIniciales[nombreCandidato][emojiValue] = 0;
             });
         });
-        guardarVotos();
+        if (guardar) guardarVotos();
         return votosIniciales;
+    }
+
+    /** Limpiar votos del estado y del almacenamiento */
+    function reiniciarVotos() {
+        localStorage.removeItem(STORAGE_KEY); // Limpia el localStorage
+        votos = inicializarVotos(true); // Inicializa los votos y guarda
+        actualizarResultados(); // Refresca el DOM
     }
 
     /** Actualizar la lista de resultados en pantalla */
     function actualizarResultados() {
-        listaResultados.innerHTML = ""; // Limpiar resultados anteriores
+        const tabla = document.getElementById("tabla").querySelector("tbody");
+        tabla.innerHTML = ""; // Elimina todo el contenido del tbody
         for (const [candidato, emojiVotos] of Object.entries(votos)) {
-            const resultadoCandidato = document.createElement("li");
-            resultadoCandidato.classList.add("collection-item");
-            resultadoCandidato.innerHTML = `<strong>${candidato}:</strong> ${formatearVotos(emojiVotos)}`;
-            listaResultados.appendChild(resultadoCandidato);
+            insertarRegistro(candidato, emojiVotos);
         }
     }
 
-    /** Formatear los votos para mostrarlos */
-    function formatearVotos(emojiVotos) {
-        return Object.entries(emojiVotos)
-            .map(([emoji, count]) => `${emoji} (${count})`)
-            .join(", ");
+    /** Insertar un registro en la tabla de resultados */
+    function insertarRegistro(nombre, emojiVotos) {
+        const tabla = document.getElementById("tabla").querySelector("tbody");
+        const nuevaFila = tabla.insertRow();
+        nuevaFila.insertCell(0).textContent = nombre;
+        nuevaFila.insertCell(1).textContent = emojiVotos["😊"] || 0;
+        nuevaFila.insertCell(2).textContent = emojiVotos["🙁"] || 0;
+        nuevaFila.insertCell(3).textContent = emojiVotos["😡"] || 0;
+        nuevaFila.insertCell(4).textContent = emojiVotos["😐"] || 0;
     }
 
-    /** Configurar eventos de clic en emojis y botón de reinicio */
+    /** Configurar eventos de clic en emojis y botones */
     function configurarEventos() {
         tarjetasCandidatos.forEach((candidato) => {
             const nombreCandidato = candidato.querySelector("h1").textContent;
+
+            // Asegurar que el candidato existe en el objeto votos
+            if (!votos[nombreCandidato]) {
+                votos[nombreCandidato] = {};
+                candidato.querySelectorAll(".emoji").forEach((emoji) => {
+                    const emojiValue = emoji.dataset.emoji;
+                    votos[nombreCandidato][emojiValue] = 0;
+                });
+                guardarVotos(); // Guardar estado actualizado
+            }
+
             candidato.querySelectorAll(".emoji").forEach((emoji) => {
                 emoji.addEventListener("click", () => {
                     const emojiValue = emoji.dataset.emoji;
-
                     // Incrementar el voto
+                    if (!votos[nombreCandidato]) {
+                        console.error(`El candidato ${nombreCandidato} no está definido en votos.`);
+                        return;
+                    }
+                    if (!votos[nombreCandidato][emojiValue]) {
+                        votos[nombreCandidato][emojiValue] = 0;
+                    }
                     votos[nombreCandidato][emojiValue]++;
                     guardarVotos();
                     actualizarResultados();
@@ -83,12 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Evento para reiniciar votos
         botonReiniciar.addEventListener("click", () => {
             if (confirm("¿Estás seguro de reiniciar las votaciones?")) {
-                votos = inicializarVotos();
-                actualizarResultados();
+                reiniciarVotos();
             }
         });
 
-        // Evento ocultar/mostrar rsultados
+        // Evento para ocultar/mostrar resultados
         botonResultados.addEventListener("click", () => {
             listaResultados.classList.toggle("hidden");
             const textoBoton = listaResultados.classList.contains("hidden")
@@ -96,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 : "Ocultar Resultados";
             botonResultados.textContent = textoBoton;
         });
-
     }
 
     /** Inicializar la aplicación */

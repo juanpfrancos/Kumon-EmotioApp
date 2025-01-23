@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Votaciones</title>
+  <title>¿Cómo fue mi rutina el dia de hoy?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
@@ -133,17 +133,29 @@
     <button class="boton boton-secundario" id="resultados-btn">Ver Resultados</button>
   </div>
 
-
-    <!-- Resultados -->
-    <div id="resultados" class="hidden center-align">
-      <h4>Resultados</h4>
-      <ul id="lista-resultados" class="collection"></ul>
-
-      
-
+  <!-- Resultados -->
+  <div id="resultados" class="hidden center-align">
+    <h1 class="center-align luckiest-guy-regular" style="margin-top: 1em;">Resultados</h4>
+    <div class="container">
+      <table id="tabla" class="tabla">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>😊</th>
+            <th>🙁</th>
+            <th>😡</th>
+            <th>😐</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
-    <script src="scripts.js"></script>
-    
-  </body>
+
+
+  </div>
+  <script src="scripts.js"></script>
+
+</body>
 
 </html>
