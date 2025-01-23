@@ -5,182 +5,145 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Votaciones</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="grey lighten-4">
-  <main class="container">
-    <h1 class="center-align">Sistema de Votaciones</h1>
-
-    <!-- Contenedor de votación -->
-    <div id="votacion-container" class="row">
-      <!-- Candidato -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/01.jpg" alt="Candidato 1">
-          </div>
-          <div class="card-content">
-            <h4>Stefany Ospina Gallego</h4>
-            <div class="emojis center-align">
-              <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');"
-                data-emoji="😊"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');"
-                data-emoji="🙁"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');"
-                data-emoji="😡"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
-                data-emoji="😐"></button>
-            </div>
-          </div>
+  <h1 class="center-align luckiest-guy-regular">¿Cómo fue mi rutina el dia de hoy?</h1>
+  <div class="container">
+    <div class="card">
+      <img src="img/01.jpg" alt="Stefany Ospina Gallego" class="profile-img">
+      <h1 class="luckiest-guy-regular">Stefany Ospina Gallego</h1>
+      <p class="role">Auxiliar pedagógico</p>
+      <div class="emojis">
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');" data-emoji="😊"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');" data-emoji="🙁"></button>
         </div>
-      </div>
-
-      <!-- Candidato -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/02.jpg" alt="Candidato 2">
-          </div>
-          <div class="card-content">
-            <h4>Erika Johana Torres Fierro</h4>
-            <div class="emojis center-align">
-              <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');"
-                data-emoji="😊"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');"
-                data-emoji="🙁"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');"
-                data-emoji="😡"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
-                data-emoji="😐"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Candidato -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/03.jpg" alt="Candidato 2">
-          </div>
-          <div class="card-content">
-            <h4>Stephanie Andrea Garcia Santa</h4>
-            <div class="emojis center-align">
-              <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');"
-                data-emoji="😊"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');"
-                data-emoji="🙁"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');"
-                data-emoji="😡"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
-                data-emoji="😐"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Candidato -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/04.jpg" alt="Candidato 2">
-          </div>
-          <div class="card-content">
-            <h4>Junny Alejandra Vásquez Zárate</h4>
-            <div class="emojis center-align">
-              <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');"
-                data-emoji="😊"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');"
-                data-emoji="🙁"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');"
-                data-emoji="😡"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
-                data-emoji="😐"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Candidato -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/05.jpg" alt="Candidato 2">
-          </div>
-          <div class="card-content">
-            <h4>Mariana Serna Ramírez</h4>
-            <div class="emojis center-align">
-              <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');"
-                data-emoji="😊"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');"
-                data-emoji="🙁"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');"
-                data-emoji="😡"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
-                data-emoji="😐"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Candidato -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/06.jpg" alt="Candidato 2">
-          </div>
-          <div class="card-content">
-            <h4>Juan Guillermo García Salazar</h4>
-            <div class="emojis center-align">
-              <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');"
-                data-emoji="😊"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');"
-                data-emoji="🙁"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');"
-                data-emoji="😡"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
-                data-emoji="😐"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-      <!-- Candidato -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/07.jpg" alt="Candidato 7">
-          </div>
-          <div class="card-content">
-            <h4>Juan Camilo Brito Arboleda</h4>
-            <div class="emojis center-align">
-              <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');"
-                data-emoji="😊"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');"
-                data-emoji="🙁"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');"
-                data-emoji="😡"></button>
-              <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
-                data-emoji="😐"></button>
-            </div>
-          </div>
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');" data-emoji="😡"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
+            data-emoji="😐"></button>
         </div>
       </div>
     </div>
+    <div class="card">
+      <img src="img/02.jpg" alt="Erika Johana Torres Fierro" class="profile-img">
+      <h1 class="luckiest-guy-regular">Erika Johana Torres Fierro</h1>
+      <p class="role">Auxiliar pedagógico</p>
+      <div class="emojis">
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');" data-emoji="😊"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');" data-emoji="🙁"></button>
+        </div>
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');" data-emoji="😡"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
+            data-emoji="😐"></button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/03.jpg" alt="Stephanie Andrea Garcia Santa" class="profile-img">
+      <h1 class="luckiest-guy-regular">Stephanie Andrea Garcia Santa</h1>
+      <p class="role">Auxiliar pedagógico</p>
+      <div class="emojis">
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');" data-emoji="😊"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');" data-emoji="🙁"></button>
+        </div>
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');" data-emoji="😡"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
+            data-emoji="😐"></button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/04.jpg" alt="Junny Alejandra Vásquez Zárate" class="profile-img">
+      <h1 class="luckiest-guy-regular">Junny Alejandra Vásquez Zárate</h1>
+      <p class="role">Auxiliar pedagógico</p>
+      <div class="emojis">
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');" data-emoji="😊"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');" data-emoji="🙁"></button>
+        </div>
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');" data-emoji="😡"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
+            data-emoji="😐"></button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/05.jpg" alt="Mariana Serna Ramírez" class="profile-img">
+      <h1 class="luckiest-guy-regular">Mariana Serna Ramírez</h1>
+      <p class="role">Auxiliar pedagógico</p>
+      <div class="emojis">
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');" data-emoji="😊"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');" data-emoji="🙁"></button>
+        </div>
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');" data-emoji="😡"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
+            data-emoji="😐"></button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/06.jpg" alt="Juan Guillermo García Salazar" class="profile-img">
+      <h1 class="luckiest-guy-regular">Juan Guillermo García Salazar</h1>
+      <p class="role">Auxiliar pedagógico</p>
+      <div class="emojis">
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');" data-emoji="😊"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');" data-emoji="🙁"></button>
+        </div>
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');" data-emoji="😡"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
+            data-emoji="😐"></button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img/07.jpg" alt="Juan Camilo Brito Arboleda" class="profile-img">
+      <h1 class="luckiest-guy-regular">Juan Camilo Brito Arboleda</h1>
+      <p class="role">Auxiliar pedagógico</p>
+      <div class="emojis">
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/smile.webp');" data-emoji="😊"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/sad.webp');" data-emoji="🙁"></button>
+        </div>
+        <div class="emoji-row">
+          <button class="btn emoji-btn emoji" style="background-image: url('img/ungry.webp');" data-emoji="😡"></button>
+          <button class="btn emoji-btn emoji" style="background-image: url('img/neutral.webp');"
+            data-emoji="😐"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="botones center-align">
+    <button class="boton boton-secundario" id="reiniciar-btn">Reiniciar Conteo</button>
+    <button class="boton boton-secundario" id="resultados-btn">Ver Resultados</button>
+  </div>
+
 
     <!-- Resultados -->
-    <div id="resultados" class="section">
+    <div id="resultados" class="hidden center-align">
       <h4>Resultados</h4>
       <ul id="lista-resultados" class="collection"></ul>
-      <a id="reiniciar-btn" class="btn red">Reiniciar Votaciones</a>
-    </div>
-  </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="scripts.js"></script>
-</body>
+      
+
+    </div>
+    <script src="scripts.js"></script>
+    
+  </body>
 
 </html>

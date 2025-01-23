@@ -1,33 +1,200 @@
 /* styles.css */
-#votacion-container {
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
 .emoji-btn {
-  width: 100px; /* Tamaño del botón */
-  height: 100px; /* Tamaño del botón */
+  width: 80px; /* Tamaño del botón */
+  height: 80px; /* Tamaño del botón */
   border-radius: 50%; /* Forma circular */
   background-size: cover; /* La imagen ocupa todo el botón */
   background-position: center;
   background-repeat: no-repeat;
   border: 2px solid #ddd; /* Borde opcional */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición suave */
+  transform: scale(1); /* Asegura el tamaño inicial */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+  margin: 7px;
 }
 
-.emoji-btn:hover {
-  transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+
+.emoji-btn:hover,
+.emoji-btn:focus-visible {
+  transform: scale(1.1); /* Agranda el botón */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
 .emoji-btn:active {
-  transform: scale(1); /* Restablece el tamaño al hacer clic */
+  transform: scale(1); /* Restablece el tamaño */
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Sombra menos pronunciada */
+}
+
+
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.emojis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00b3ef;
+  border-radius: 25px;
+}
+
+.emoji-row {
+  display: flex;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  width: 290px;
+}
+
+
+.profile-img {
+  border-radius: 50%;
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.role {
+  font-size: 1.5em;
+  color: #666;
+  margin: 0.5em;
+}
+
+.highlight {
+  color: #ff6347;
+  font-weight: bold;
+}
+
+
+.emojis img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
+
+
+.luckiest-guy-regular {
+  font-family: "Luckiest Guy", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+}
+
+
+
+
+
+/* Estilo base para botones */
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón primario */
+.boton {
+  background: linear-gradient(135deg, #00b3ef, #2575fc);
+  color: white;
+  flex: 1 1 auto;
+  max-width: 200px;
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #2575fc, #00b3ef);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón secundario */
+.boton-secundario {
+  background: white;
+  color: #00b3ef;
+  border: 2px solid #00b3ef;
+}
+
+.boton-secundario:hover {
+  background: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+
+.hidden{
+  visibility: hidden;
+}
+
+.center-align{
+  text-align: center;
+} 
+
+
+/* Estilos para la tabla */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla thead {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+.tabla th, .tabla td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
 }

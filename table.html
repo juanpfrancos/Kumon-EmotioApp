@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Exportable</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tabla Elegante</h1>
+    <div class="botones">
+      <button id="export-excel" class="boton">Exportar a Excel</button>
+      <button id="export-image" class="boton">Guardar como Imagen</button>
+    </div>
+    <table id="tabla" class="tabla">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Correo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Juan Pérez</td>
+          <td>28</td>
+          <td>juan.perez@example.com</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ana López</td>
+          <td>34</td>
+          <td>ana.lopez@example.com</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Carlos Gómez</td>
+          <td>23</td>
+          <td>carlos.gomez@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+<style>
+
+
+
+
+/* Estilos para la tabla */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla thead {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+.tabla th, .tabla td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabla tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+
+</style>
