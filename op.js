@@ -1,5 +1,5 @@
 // Sistema de opacidad con fecha de referencia fija - Parametrizable
-let opacityEnabled = true;
+let opacityEnabled = false;
 let referenceDate = new Date('2025-05-27T06:58:00-05:00'); // Fecha de referencia con zona horaria
 let durationDays = 2; // Parametrizable
 let minOpacity = 0.02; // Parametrizable
